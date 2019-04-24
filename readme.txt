@@ -1,0 +1,5 @@
+The MainGUI is used to run the whole program where there is two buttons one for reports and one for analyzing the data. then the buttons under the analyze data each are declared
+in the anaylzeGUI class. all of the even listeners either call a results GUI constructor to print to a new screen, or the analyze class with the analyze methods to determine
+how you would like the datasets to be analyzed. the PATHS of the files need changed in the ExecuteReportsV2, the analyze, and writeToExcel Classes. there are some dummy classes
+that are currently still being messed with but that is the most that is needed to know about our code so far. Reports are still not printing properly. Apache POI, BIRT Runtime,
+and Swing dependencies are all added to the file path. there are alot of dummy jars added too in attempts to getting the reports running. we are working on deleting those.
