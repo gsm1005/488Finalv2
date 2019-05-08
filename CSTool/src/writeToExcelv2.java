@@ -10,15 +10,16 @@ import java.io.IOException;
 
 public class writeToExcelv2 {
 
-    private static final String FILE_NAME = "C:\\workspace/workspace/Data/dataForReports1.xlsx";
+    //private String FILE_NAME = "C:\\Users\\garre\\eclipse-workspace\\CSTool\\src\\"+ ;
 
-   writeToExcelv2(int normal,int bots,int background, int totalFlows){
+   writeToExcelv2(int normal,int bots,int background, int totalFlows,String backgroundSt,String normalSt,String botNetst,String type,String fileType){
+	   String FILE_NAME = "C:\\Users\\garre\\eclipse-workspace\\CSTool\\src\\"+fileType ;
 
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("sheet1");
-        Object[][] datatypes = {{"flowType","Total"},
-                {"backround",normal},
-                {"normal",bots},{"botnets",background},{"totalFlows",totalFlows}
+        Object[][] datatypes = {{type,"Total"},
+                {backgroundSt,normal},
+                {normalSt,bots},{botNetst,background},{"totalFlows",totalFlows}
         };
 
         int rowNum = 0;

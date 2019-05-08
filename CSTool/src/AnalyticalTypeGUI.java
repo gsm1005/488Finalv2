@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class AnalyticalTypeGUI extends JFrame {
@@ -53,7 +54,7 @@ public class AnalyticalTypeGUI extends JFrame {
 		
 		JButton btnNewButton = new JButton("Network Traffic");
 		btnNewButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
-		btnNewButton.setBounds(148, 54, 138, 32);
+		btnNewButton.setBounds(34, 54, 138, 32);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Packets/TrafficType");
@@ -71,7 +72,7 @@ public class AnalyticalTypeGUI extends JFrame {
 				}
 			}
 		});
-		btnNewButton_1.setBounds(148, 97, 138, 32);
+		btnNewButton_1.setBounds(34, 97, 138, 32);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Bytes/TrafficType\r\n");
@@ -91,8 +92,13 @@ public class AnalyticalTypeGUI extends JFrame {
 				}
 			}
 		});
-		btnNewButton_2.setBounds(148, 140, 138, 32);
+		btnNewButton_2.setBounds(34, 140, 138, 32);
 		contentPane.add(btnNewButton_2);
+		
+		JLabel lblNewLabel_1 = new JLabel();
+		lblNewLabel_1.setBounds(236, 54, 174, 149);
+		 lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\garre\\eclipse-workspace\\CSTool\\imgs\\2.JPG"));
+		contentPane.add(lblNewLabel_1);
 		
 		
 		btnNewButton.addMouseListener(new MouseAdapter() {

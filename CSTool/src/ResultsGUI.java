@@ -1,6 +1,5 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -33,7 +32,7 @@ public class ResultsGUI extends JFrame {
 			}
 		});
 	}
-		//-------------------------------------------------------------------------------------------------------------------//
+		//------------------------------------------------------initilize packets results screen-------------------------------------------------------------//
 		public void dataScreen2() {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
@@ -62,6 +61,7 @@ public class ResultsGUI extends JFrame {
 		//--------------------------------------------------------------------------------------------------------------------//
 	/**
 	 * Create the frame.
+	 * @wbp.parser.constructor
 	 */
 	public ResultsGUI(int fake) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -105,12 +105,26 @@ public class ResultsGUI extends JFrame {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				writeToExcelv2 reports = new writeToExcelv2(analyze.backgroundFlows,analyze.normal,analyze.botNets,analyze.totalFlows);
+				writeToExcelv2 reports = new writeToExcelv2(analyze.backgroundFlows,analyze.normal,analyze.botNets,analyze.totalFlows,"backgroundFlows","normalFlows","botnetFlows","flowTpyes","flowTypesForReports.xlsx");
 			}
 		});
 		btnNewButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnNewButton.setBounds(102, 207, 248, 43);
+		btnNewButton.setBounds(20, 207, 149, 43);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Report Data\r\n");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			
+			public void mouseClicked(MouseEvent e) {
+				
+				
+				printVersion newReport = new printVersion();
+				newReport.versionScreen();
+			}
+		});
+		btnNewButton_1.setBounds(238, 207, 157, 41);
+		contentPane.add(btnNewButton_1);
 	}
 	
 	//----------------------------------------------------------------------------------------------------------------------------------//
@@ -159,12 +173,26 @@ public class ResultsGUI extends JFrame {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				writeToExcelv2 reports = new writeToExcelv2(analyze.backgroundFlows,analyze.normal,analyze.botNets,analyze.totalFlows);
+				writeToExcelv2 reports = new writeToExcelv2((int)analyze.backgroundPackets,(int)analyze.normalPackets,(int)analyze.botNetsPackets,(int)analyze.totalPackets,"backGround","normal","botnet","packet types","packetsForReports.xlsx");
 			}
 		});
 		btnNewButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnNewButton.setBounds(102, 207, 248, 43);
+		btnNewButton.setBounds(20, 207, 149, 43);
 		contentPane.add(btnNewButton);
+		JButton btnNewButton_1 = new JButton("Report Data\r\n");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			
+			public void mouseClicked(MouseEvent e) {
+				
+				
+				printVersion newReport = new printVersion();
+				newReport.versionScreen();
+			}
+		});
+		btnNewButton_1.setBounds(238, 207, 157, 41);
+		contentPane.add(btnNewButton_1);
+		
 	}
 	//----------------------------------------------------------------------------------------------------------------------------------//
 	
@@ -176,7 +204,7 @@ public class ResultsGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Different Traffic Types");
+		JLabel lblNewLabel = new JLabel("Bytes Per Traffic Type");
 		lblNewLabel.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
 		lblNewLabel.setBounds(120, 0, 275, 53);
 		contentPane.add(lblNewLabel);
@@ -186,22 +214,22 @@ public class ResultsGUI extends JFrame {
 		list.setBounds(102, 73, 0, 118);
 		contentPane.add(list);
 		
-		JLabel lblNewLabel_1 = new JLabel("Background Bytes: "+ analyze.backgroundBytes);
+		JLabel lblNewLabel_1 = new JLabel("Background Bytes: "+ (int)analyze.backgroundBytes);
 		lblNewLabel_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		lblNewLabel_1.setBounds(10, 73, 215, 28);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Botnet Bytes: " + analyze.botNetsBytes);
+		JLabel lblNewLabel_2 = new JLabel("Botnet Bytes: " + (int)analyze.botNetsBytes);
 		lblNewLabel_2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		lblNewLabel_2.setBounds(10, 113, 204, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Normal Bytes: "+ analyze.normalBytes);
+		JLabel lblNewLabel_3 = new JLabel("Normal Bytes: "+ (int)analyze.normalBytes);
 		lblNewLabel_3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		lblNewLabel_3.setBounds(10, 144, 265, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("TotalBytes: "+ analyze.totalBytes);
+		JLabel lblNewLabel_4 = new JLabel("TotalBytes: "+ (int)analyze.totalBytes);
 		lblNewLabel_4.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		lblNewLabel_4.setBounds(10, 177, 204, 14);
 		contentPane.add(lblNewLabel_4);
@@ -210,14 +238,25 @@ public class ResultsGUI extends JFrame {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				writeToExcelv2 reports = new writeToExcelv2(analyze.backgroundFlows,analyze.normal,analyze.botNets,analyze.totalFlows);
+				writeToExcelv2 reports = new writeToExcelv2((int)analyze.backgroundBytes,(int)analyze.normalBytes,(int)analyze.botNetsBytes,(int)analyze.totalBytes,"background","normal","botnet","byte types","bytesForReports.xlsx");
 			}
 		});
 		btnNewButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnNewButton.setBounds(102, 207, 248, 43);
+		btnNewButton.setBounds(20, 207, 149, 43);
 		contentPane.add(btnNewButton);
+		JButton btnNewButton_1 = new JButton("Report Data\r\n");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			
+			public void mouseClicked(MouseEvent e) {
+				
+				
+				printVersion newReport = new printVersion();
+				newReport.versionScreen();
+			}
+		});
+		btnNewButton_1.setBounds(238, 207, 157, 41);
+		contentPane.add(btnNewButton_1);
+	
 	}
-	
-	//----------------------------------------------------------------------------------------------------------------------------------//
-	
 }

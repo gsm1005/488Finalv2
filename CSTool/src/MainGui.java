@@ -49,7 +49,7 @@ public class MainGui {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -72,16 +72,7 @@ public class MainGui {
 		btnNewButton.setBounds(229, 71, 161, 45);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Print Reports\r\n");
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				printVersion print = new printVersion();
-				print.versionScreen();
-			}
-		});
-		btnNewButton_1.setBounds(229, 141, 161, 45);
-		frame.getContentPane().add(btnNewButton_1);
+		
 		
 		JLabel label = new JLabel();
 		label.setBounds(10, 45, 185, 177);

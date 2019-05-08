@@ -1,4 +1,5 @@
 import org.apache.poi.xssf.usermodel.XSSFCell;
+
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -205,6 +206,10 @@ public class analyze {
 			System.out.println("Total Flows sent and Recieved: "+totalFlows);
 			
 		}
+		 void calPercents(double background,double botnet,double normal) {
+			 
+			 
+		 }
 		
 		
 		}
